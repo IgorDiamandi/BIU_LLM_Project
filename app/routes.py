@@ -1,18 +1,23 @@
-from flask import render_template, request, jsonify
+from flask import Blueprint, render_template, request, jsonify
 from . import retriever, generator
-from . import create_app
 
-app = create_app()
+main = Blueprint('main', __name__)
 
 
-@app.route('/')
+@main.route('/')
 def index():
+    # Debug line to see if this function is accessed
+    print("Accessing the index route")
     return render_template('index.html')
 
 
-@app.route('/chat', methods=['POST'])
+@main.route('/chat', methods=['POST'])
 def chat():
-    user_query = request.json.get('query')
+    if request.is_json:
+        user_query = request.json.get('query')
+    else:
+        return jsonify({'error': 'Invalid content type, JSON required'}), 415
+
     if not user_query:
         return jsonify({'error': 'Empty query'}), 400
 
