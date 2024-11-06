@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/htmx.org@1.5.0"></script>
+</head>
+<body>
+    <div id="chat-box">
+        <div id="responses"></div>
+        <input type="text" id="user-input" hx-post="/chat" hx-target="#responses">
+    </div>
+</body>
+</html>
