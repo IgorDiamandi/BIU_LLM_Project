@@ -6,7 +6,6 @@ from .document_store import DocumentStore
 model = SentenceTransformer('all-MiniLM-L6-v2')
 document_store = DocumentStore()
 
-# Create embeddings and index using FAISS
 if document_store.documents:
     document_embeddings = model.encode(document_store.documents)
     dimension = document_embeddings.shape[1]

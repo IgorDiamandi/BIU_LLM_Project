@@ -1,26 +1,17 @@
-<!-- templates/chat.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Interface</title>
-
-    <!-- Load jQuery first -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- Load jQuery UI second -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-
-    <!-- Load HTMX -->
     <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/chat.js"></script>
 
-    <!-- Load your styles -->
-    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
 
-    <!-- Load your custom JavaScript -->
-    <script src="{{ url_for('static', filename='chat.js') }}"></script>
 </head>
 <body>
     <div id="chat-container" class="resizable draggable">
@@ -36,13 +27,12 @@
                 <span class="dot"></span>
             </div>
         </div>
-        <form id="chat-form" action="/ask" hx-post="/ask" hx-target="#messages" hx-swap="beforeend" onsubmit="addUserMessage(event)">
+        <form id="chat-form" action="/ask" hx-target="#messages" hx-swap="beforeend" onsubmit="addUserMessage(event)">
             <input type="text" id="user-input" name="question" placeholder="Ask your question..." required autocomplete="off">
             <button type="submit">Send</button>
         </form>
     </div>
 
-    <script src="{{ url_for('static', filename='chat.js') }}"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 </body>

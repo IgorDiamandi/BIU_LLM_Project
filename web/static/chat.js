@@ -1,5 +1,3 @@
-// static/chat.js
-
 $(function() {
     // Make the chat container draggable and resizable
     $("#chat-container").draggable({
