@@ -27,10 +27,11 @@
                 <span class="dot"></span>
             </div>
         </div>
-        <form id="chat-form" action="/ask" hx-target="#messages" hx-swap="beforeend" onsubmit="addUserMessage(event)">
-            <input type="text" id="user-input" name="question" placeholder="Ask your question..." required autocomplete="off">
-            <button type="submit">Send</button>
-        </form>
+<form action="/ask" hx-post="/ask" hx-swap="beforeend" hx-target="#messages" id="chat-form"
+      onsubmit="addUserMessage(event)">
+    <input type="text" id="user-input" name="question" placeholder="Ask your question..." required autocomplete="off">
+    <button type="submit">Send</button>
+</form>
     </div>
 
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>

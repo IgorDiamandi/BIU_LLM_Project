@@ -20,3 +20,4 @@ def ask():
     response = generator.generate_response(user_query, relevant_chunks)
 
     return jsonify({'response': response})
+

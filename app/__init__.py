@@ -14,6 +14,7 @@ def create_app():
         static_folder=static_folder
     )
 
+    # Register Blueprint
     app.register_blueprint(main)
 
     return app
