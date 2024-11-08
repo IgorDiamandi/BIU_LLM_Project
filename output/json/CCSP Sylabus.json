@@ -1,9 +1,12 @@
 {
   "file_url": "https://ct-external-sources.s3.il-central-1.amazonaws.com/ds/rag01/sources/PDF/CCSP Sylabus.pdf",
+  "file_path": "ds/rag01/sources/PDF/CCSP Sylabus.pdf",
+  "file_name": "CCSP Sylabus.pdf",
+  "file_type": "pdf",
   "course_name": "",
   "program_manager": "",
   "instructors": [],
-  "summary": "Error analyzing content",
+  "summary": "Error analyzing content: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': \"messages.0.content.1.image.source.base64.media_type: Input should be 'image/jpeg', 'image/png', 'image/gif' or 'image/webp'\"}}",
   "embedded_images": [],
-  "full_text": "b i u . a c . i l\n.משפיעים על המחר, היום\nCertified \nCloud Security \nProfessional \n(CCSP)\n:נושאי הקורס\nCloud Concepts, \nArchitecture and Design\nCloud Data Security\nCloud Platform and \nInfrastructure Security\nCloud Application \nSecurity\nCloud Security \nOperations\nLegal, Risk, and \nCompliance\n07.11.2024 :תאריך פתיחה\nבימי שני וחמישי \n 21:30-17:30 בין השעות\n שעות אקדמיות)45(  מפגשים9 במשך\nהקורס היברידי: הלימודים יתקיימו בקמפוס \nאילן בר״ג ובזום, לבחירתכם -אוניברסיטת בר\nלאורך כל הקורס\n שנות נסיון בטכנולוגיות המידע 5 :תנאי קדם\nושיחה עם יועץ אקדמי\n בית הספר להייטק וסייבר של אוניברסיטת\nאילן, המהווה אקדמיה רשמית של -בר\n בישראל, מזמין אתכם להכשרה ISC2\nהיוקרתית באבטחת הענן\n052-5886002 :לתאום ראיון קבלה ורישום\nesther.asulin@biu.ac.il\n\n[Embedded Image 1-1]\n[Embedded Image 1-2]\n[Embedded Image 1-3]\n[Embedded Image 1-4]\n[Embedded Image 1-5]\n[Embedded Image 1-6]\n[Embedded Image 1-7]\n[Embedded Image 1-8]\n[Embedded Image 1-9]\n[Embedded Image 1-10]\n[Embedded Image 1-11]"
+  "full_text": ""
 }

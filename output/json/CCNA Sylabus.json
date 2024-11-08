@@ -1,9 +1,12 @@
 {
   "file_url": "https://ct-external-sources.s3.il-central-1.amazonaws.com/ds/rag01/sources/PDF/CCNA Sylabus.pdf",
+  "file_path": "ds/rag01/sources/PDF/CCNA Sylabus.pdf",
+  "file_name": "CCNA Sylabus.pdf",
+  "file_type": "pdf",
   "course_name": "",
   "program_manager": "",
   "instructors": [],
-  "summary": "Error analyzing content",
+  "summary": "Error analyzing content: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': \"messages.0.content.1.image.source.base64.media_type: Input should be 'image/jpeg', 'image/png', 'image/gif' or 'image/webp'\"}}",
   "embedded_images": [],
-  "full_text": "b i u . a c . i l\n.משפיעים על המחר, היום\n Cisco\n Certified\n Network\n Associate\nCCNA\n•\t\nExplain the role and function of network \ncomponents\n•\t\nDescribe characteristics of network topology \narchitectures\n•\t\nCompare physical interface and cabling types\n•\t\nConfigure and verify IPv4 addressing and \nsubnetting\n•\t\nConfigure and verify IPv6 addressing and prefix\n•\t\nDescribe wireless principles\n•\t\nConfigure and verify VLANs (normal range) \nspanning multiple switches\n•\t\nConfigure and verify interswitch connectivity\n•\t\nConfigure and verify Layer 2 discovery protocols\n•\t\nConfigure and verify (Layer 2/Layer 3) \nEtherChannel (LACP)\n•\t\nDescribe AP and WLC management access \nconnections\n•\t\nInterpret the components of routing table\n•\t\nConfigure and verify IPv4 and IPv6 static routing\n•\t\nConfigure and verify single area OSPFv2\n•\t\nConfigure and verify inside source NAT using \nstatic and pools\n•\t\nConfigure and verify NTP operating in a client and \nserver mode\n•\t\nConfigure and verify DHCP client and relay\n•\t\nConfigure network devices for remote access \nusing SSH\n•\t\nDefine key security concepts (threats, \nvulnerabilities, exploits, and mitigation techniques)\n•\t\nDescribe security program elements (user \nawareness, physical access control)\n•\t\nConfigure device access control using local \npasswords\n•\t\nDescribe security password policies elements\n  אשר מהווהCISCO זהו הקורס המקורי של\nCISCO IT Academy חלק מתוכנית\nבית הספר להייטק וסייבר \nאילן מזמין אתכם -של אוניברסיטת בר\nIT-לרכוש את ההסמכה המבוקשת  ב\n052-5886002 :לתאום ראיון קבלה ורישום\nesther.asulin@biu.ac.il\n:נושאי הקורס\n הקורס היברידי: הלימודים יתקיימו בקמפוס\nאילן בר״ג ובזום, לבחירתכם -אוניברסיטת בר\nלאורך כל הקורס\n08.10.2024 :תאריך פתיחה\n21:30-17:30 בימי שלישי בין השעות\n13:00-09:00 בימי שישי בין השעות\n שעות אקדמיות)85(  מפגשים17 במשך\n\n[Embedded Image 1-1]\n[Embedded Image 1-2]\n[Embedded Image 1-3]\n[Embedded Image 1-4]"
+  "full_text": ""
 }

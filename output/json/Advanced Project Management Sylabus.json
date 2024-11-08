@@ -1,9 +1,12 @@
 {
   "file_url": "https://ct-external-sources.s3.il-central-1.amazonaws.com/ds/rag01/sources/PDF/Advanced Project Management Sylabus.pdf",
+  "file_path": "ds/rag01/sources/PDF/Advanced Project Management Sylabus.pdf",
+  "file_name": "Advanced Project Management Sylabus.pdf",
+  "file_type": "pdf",
   "course_name": "",
   "program_manager": "",
   "instructors": [],
-  "summary": "Error analyzing content",
+  "summary": "Error analyzing content: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': \"messages.0.content.1.image.source.base64.media_type: Input should be 'image/jpeg', 'image/png', 'image/gif' or 'image/webp'\"}}",
   "embedded_images": [],
-  "full_text": "b i u . a c . i l\n.משפיעים על המחר, היום\n Advanced \n Project\nManagement\n13.01.2025 :תאריך פתיחה\nבימים שני וחמישי \n21:30-17:30 בין השעות\n שעות אקדמיות)25(  מפגשים5 במשך\n בית הספר להייטק וסייבר\nאילן מזמין אתכם -של אוניברסיטת בר\nלסדנת ניהול של פרויקטים בתחום הדאטה\nלתאום ראיון קבלה ורישום: \n052-5886002\nesther.asulin@biu.ac.il\n הקורס  היברידי:  הלימודים  יתקיימו  בקמפוס\nאילן  בר״ג  ובזום,  לבחירתכם -אוניברסיטת  בר\nלאורך כל הקורס\nAdvanced Project Management aimed for \nData Products \n•\t\nCDAIO Agile projects management\n•\t\nScrum & Kanban\n•\t\nData products management\n•\t\nProject and tasks management tools\n Executive look at Project Management\n•\t\nPMI & PMO\n•\t\nLeading factors towards project Initiation\n•\t\nMitigating the Key Reasons for Project \nFailure\n•\t\nInterrelationships between Project, \nProgram, and Portfolio\n•\t\nTraditional, Hybrid, and Agile Project \nManagement key considerations\n•\t\nOrganizational Structures and their impact \non Project Management\n•\t\nReviewing the 10 knowledge areas and 49 \nProject Management Processes\n•\t\nLeadership styles, Handling dilemmas and \ncrisis\n•\t\nEffectiveness vs. Efficiency\n•\t\nEffective Time Management – \nPrioritization, Desk Clearing, Reducing \nDistractions, Dynamic List\n•\t\nProject Integration Process\n•\t\nUsing AI as a co-pilot for project \nmanagement process\n:נושאי הקורס\n\n[Embedded Image 1-1]\n[Embedded Image 1-2]\n[Embedded Image 1-3]"
+  "full_text": ""
 }

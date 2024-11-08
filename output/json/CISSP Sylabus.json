@@ -1,9 +1,12 @@
 {
   "file_url": "https://ct-external-sources.s3.il-central-1.amazonaws.com/ds/rag01/sources/PDF/CISSP Sylabus.pdf",
+  "file_path": "ds/rag01/sources/PDF/CISSP Sylabus.pdf",
+  "file_name": "CISSP Sylabus.pdf",
+  "file_type": "pdf",
   "course_name": "",
   "program_manager": "",
   "instructors": [],
-  "summary": "Error analyzing content",
+  "summary": "Error analyzing content: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': \"messages.0.content.1.image.source.base64.media_type: Input should be 'image/jpeg', 'image/png', 'image/gif' or 'image/webp'\"}}",
   "embedded_images": [],
-  "full_text": "b i u . a c . i l\n.משפיעים על המחר, היום\nCertified \nInformation \nSystems \nSecurity \nProfessional \n(CISSP)\n:נושאי הקורס\nSecurity and Risk \nManagement\nAsset Security\nSecurity Architecture and \nEngineering\nCommunication and \nNetwork Security\nIdentity and Access \nManagement (IAM)\nSecurity Assessment and \nTesting\nSecurity Operations\nSoftware Development \nSecurity\n13.11.2024 :תאריך פתיחה\nבימים ראשון ורביעי \n21:30 - 17:30 בין השעות\n שעות אקדמיות)50(  מפגשים10 במשך\nהקורס היברידי: הקורס מתקיים בקמפוס \nאילן וסימולטנית באמצעות זום-אוניברסיטת בר\nתנאי קדם: חמש שנות נסיון בתחום ושיחה עם \nיועץ אקדמי\n בית הספר להייטק וסייבר של אוניברסיטת\n ISC2 אילן ,המהווה אקדמיה רשמית של-בר\nבישראל, מזמין אתכם להכשרה היוקרתית \nבתחום אבטחת המידע והסייבר\n052-5886002 :לתאום ראיון קבלה ורישום\nesther.asulin@biu.ac.il\n\n[Embedded Image 1-1]\n[Embedded Image 1-2]\n[Embedded Image 1-3]\n[Embedded Image 1-4]\n[Embedded Image 1-5]\n[Embedded Image 1-6]\n[Embedded Image 1-7]\n[Embedded Image 1-8]\n[Embedded Image 1-9]\n[Embedded Image 1-10]\n[Embedded Image 1-11]\n[Embedded Image 1-12]\n[Embedded Image 1-13]"
+  "full_text": ""
 }

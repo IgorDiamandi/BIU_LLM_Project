@@ -1,9 +1,12 @@
 {
   "file_url": "https://ct-external-sources.s3.il-central-1.amazonaws.com/ds/rag01/sources/PDF/CC Sylabus.pdf",
+  "file_path": "ds/rag01/sources/PDF/CC Sylabus.pdf",
+  "file_name": "CC Sylabus.pdf",
+  "file_type": "pdf",
   "course_name": "",
   "program_manager": "",
   "instructors": [],
-  "summary": "Error analyzing content",
+  "summary": "Error analyzing content: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': \"messages.0.content.1.image.source.base64.media_type: Input should be 'image/jpeg', 'image/png', 'image/gif' or 'image/webp'\"}}",
   "embedded_images": [],
-  "full_text": "b i u . a c . i l\n.משפיעים על המחר, היום\nCertified in \nCybersecurity \n(CC)\n:נושאי הקורס\nSecurity Principles\nBusiness Continuity (BC), \nDisaster Recovery (DR) \n& Incident Response \nConcepts\nAccess Controls Concepts\nNetwork Security\nSecurity Operations\n06.11.2024 :תאריך פתיחה\nבימים ראשון ורביעי\n21:30 - 17:30 בין השעות\n שעות אקדמיות)20(  מפגשים4 במשך\nהקורס היברידי: הלימודים יתקיימו בקמפוס \nאילן בר\"ג ובזום, לבחירתכם -אוניברסיטת בר\nלאורך כל הקורס\n בית הספר להייטק וסייבר של אוניברסיטת\nאילן, המהווה אקדמיה רשמית של -בר\n בישראל, מזמין אתכם לקורס רקע ISC2\nוהרחבת אופקים בעולמות הסייבר\n052-5886002 :לתאום ראיון קבלה ורישום\nesther.asulin@biu.ac.il\n\n[Embedded Image 1-1]\n[Embedded Image 1-2]\n[Embedded Image 1-3]\n[Embedded Image 1-4]\n[Embedded Image 1-5]\n[Embedded Image 1-6]\n[Embedded Image 1-7]\n[Embedded Image 1-8]\n[Embedded Image 1-9]\n[Embedded Image 1-10]\n[Embedded Image 1-11]"
+  "full_text": ""
 }

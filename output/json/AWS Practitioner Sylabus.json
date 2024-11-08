@@ -1,9 +1,12 @@
 {
   "file_url": "https://ct-external-sources.s3.il-central-1.amazonaws.com/ds/rag01/sources/PDF/AWS Practitioner Sylabus.pdf",
+  "file_path": "ds/rag01/sources/PDF/AWS Practitioner Sylabus.pdf",
+  "file_name": "AWS Practitioner Sylabus.pdf",
+  "file_type": "pdf",
   "course_name": "",
   "program_manager": "",
   "instructors": [],
-  "summary": "Error analyzing content",
+  "summary": "Error analyzing content: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': \"messages.0.content.1.image.source.base64.media_type: Input should be 'image/jpeg', 'image/png', 'image/gif' or 'image/webp'\"}}",
   "embedded_images": [],
-  "full_text": "b i u . a c . i l\n.משפיעים על המחר, היום\n AWS Cloud\nPractitioner\n:נושאי הקורס\nDefine what the AWS Cloud is and \nthe basic global infrastructure\nDescribe basic AWS Cloud \narchitectural principles\nDescribe the AWS Cloud value \nproposition\nDescribe key services on the AWS \nplatform and their common use \ncases (for example, compute and \nanalytics)\nDescribe basic security and \ncompliance aspects of the AWS \nplatform and the shared security \nmodel\nDefine the billing, account \nmanagement, and pricing models\nIdentify sources of documentation \nor technical assistance\nDescribe basic/core characteristics \nof deploying and operating in the \nAWS Cloud\n29.11.2024  :תאריך פתיחה\n21:30-17:30 בימי שלישי בין השעות\n13:00-09:00 בימי שישי בין השעות\n שעות אקדמיות)50(  מפגשים10 במשך\n בית הספר להייטק וסייבר\nאילן מזמין אתכם -של אוניברסיטת בר\nAWS ללמוד את טכנולוגיות הענן של\n הקורס היברידי: הלימודים יתקיימו בקמפוס\nאילן בר״ג ובזום, לבחירתכם -אוניברסיטת בר\nלאורך כל הקורס\n052-5886002 :לתאום ראיון קבלה ורישום\nesther.asulin@biu.ac.il\n\n[Embedded Image 1-1]\n[Embedded Image 1-2]\n[Embedded Image 1-3]\n[Embedded Image 1-4]\n[Embedded Image 1-5]\n[Embedded Image 1-6]\n[Embedded Image 1-7]\n[Embedded Image 1-8]\n[Embedded Image 1-9]\n[Embedded Image 1-10]\n[Embedded Image 1-11]\n[Embedded Image 1-12]\n[Embedded Image 1-13]"
+  "full_text": ""
 }
