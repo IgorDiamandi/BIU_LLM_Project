@@ -1,0 +1,65 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f265693e-f143-4fb2-a071-b18277c51967",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# config/config-demo.yaml\n",
+    "\n",
+    "local:\n",
+    "  # local pc computer\n",
+    "  source_folder_name: \"L:/My Drive/Source_Files\" # local folder for input pdf jpg, png documents\n",
+    "\n",
+    "aws:\n",
+    "  # aws services\n",
+    "  aws_access_key_id: \"000111222333444555\"  # project aws access key id\n",
+    "  aws_secret_access_key: \"aaabbbcccdddeeefffggghhh0000111222333\"  # project aws_secret_access_key\n",
+    "  \n",
+    "  region_name: \"il-central-1\"  # project aws  region_name e.g., \"il-central-1\"\n",
+    "  \n",
+    "  upload_bucket_name: \"abcdefg\"  # project aws upload bucket name\n",
+    "  upload_path: \"aa/bb/cc/rag01/sources\"  # project aws upload path in bucket\n",
+    "  \n",
+    "  log_bucket_name: \"abcdefg\"  # project aws log files bucket name\n",
+    "  log_path: \"aa/bb/cc/rag01/logs\"  # project aws log files path in bucket\n",
+    "  \n",
+    "  txt_extract_bucket_name: \"ct-external-sources\"  # project aws exrtacted json docs bucket name\n",
+    "  extract_txt_path: \"aa/bb/cc/rag01/extract\"  # project aws exrtacted json docs path in bucket\n",
+    "  \n",
+    "anthropic:\n",
+    "  # key for claude\n",
+    "  claud_key: \"aaabbbcccdddeeefffggghhh0000111222333\"\n",
+    "\n",
+    "openai:\n",
+    "  # key for open ai\n",
+    "  chat_gpt_key: \"aaabbbcccdddeeefffggghhh0000111222333\"\n",
+    "  \n",
+    "   "
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

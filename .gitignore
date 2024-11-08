@@ -163,6 +163,6 @@ cython_debug/
 
 
 # Sensitive configuration folders & files
-config/
-.config/
+.config/config.yaml
+config/config.yaml
 config.yaml
