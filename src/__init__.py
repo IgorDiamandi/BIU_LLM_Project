@@ -1,10 +1,15 @@
+from src.gradio_chat import demo
+
 from flask import Flask
 import os
-from .routes import main
+import sys
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.join(current_dir, '../src')
+sys.path.insert(0, src_dir)
 
 
 def create_app():
-    current_dir = os.path.dirname(os.path.abspath(__file__))
     template_folder = os.path.join(current_dir, '../web/templates')
     static_folder = os.path.join(current_dir, '../web/static')
 
@@ -14,7 +19,6 @@ def create_app():
         static_folder=static_folder
     )
 
-    # Register Blueprint
-    app.register_blueprint(main)
+    demo.launch()
 
     return app
