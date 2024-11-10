@@ -42,6 +42,11 @@ llama-index = "^0.11.22"
 langchain-openai = "^0.2.6"
 torch = "^2.5.1"
 gradio = "^5.5.0"
+llama-index-embeddings-openai = "^0.2.5"
+llama-index-embeddings-huggingface = "^0.3.1"
+optimum = {extras = ["exporters"], version = "^1.23.3"}
+llama-index-embeddings-huggingface-optimum = "^0.2.0"
+chardet = "^5.2.0"
 
 
 [build-system]

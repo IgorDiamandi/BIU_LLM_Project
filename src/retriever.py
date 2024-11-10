@@ -1,26 +1,12 @@
-from sentence_transformers import SentenceTransformer
-import faiss
-import numpy as np
-from .document_store import DocumentStore
+from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
+from llama_index.embeddings.openai import OpenAIEmbedding
+from llama_index.core import Settings
 
-model = SentenceTransformer('all-MiniLM-L6-v2')
-document_store = DocumentStore()
+Settings.embed_model = OpenAIEmbedding()
 
-if document_store.documents:
-    document_embeddings = model.encode(document_store.documents)
-    dimension = document_embeddings.shape[1]
-    index = faiss.IndexFlatL2(dimension)
-    index.add(np.array(document_embeddings))
-else:
-    print("Error: No documents to create embeddings. Please add documents to the 'data/documents/' directory.")
-    document_embeddings = None
-    index = None
+documents = SimpleDirectoryReader("../data/documents").load_data()
 
-
-def retrieve(query, k=3):
-    if document_embeddings is None:
-        return ["No documents available to retrieve information from."]
-
-    query_embedding = model.encode([query])
-    distances, indices = index.search(np.array(query_embedding), k)
-    return [document_store.documents[i] for i in indices[0]]
+index = VectorStoreIndex.from_documents(documents)
+query_engine = index.as_query_engine()
+response = query_engine.query("query string")
+embed_model = OpenAIEmbedding(embed_batch_size=42)
