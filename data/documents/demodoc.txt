@@ -1,4 +1,0 @@
-it's a demo doc:
-author - igor
-question - where
-answer - here
