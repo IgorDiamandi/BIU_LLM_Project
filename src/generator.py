@@ -1,5 +1,5 @@
 from openai import OpenAI
-from retriever import retrieve
+from src.retriever import retrieve
 
 client = OpenAI()
 
