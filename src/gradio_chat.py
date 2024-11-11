@@ -1,5 +1,5 @@
 import gradio as gr
-from generator import ask_question_with_retrieval
+from src.generator import ask_question_with_retrieval
 
 
 def chat_interface(user_input, history=[]):
