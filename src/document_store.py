@@ -1,4 +1,5 @@
 import os
+# Unused for the time being
 
 
 class DocumentStore:

@@ -3,6 +3,7 @@ from src.retriever import retrieve
 
 client = OpenAI()
 
+# Initialize chat history with a system message that sets the assistant's persona and behavior
 chat_history = [
     {
         "role": "system",
@@ -17,15 +18,19 @@ chat_history = [
     }
 ]
 
-
+# Function to ask a question, retrieve relevant documents, and generate a response
 def ask_question_with_retrieval(question):
+    # Retrieve relevant document chunks that provide context for the question
     relevant_chunks = retrieve(question)
 
+    # Append the user's question to the chat history
     chat_history.append({"role": "user", "content": question})
 
+    # Add the retrieved document chunks to the chat history to provide the assistant with more context
     for chunk in relevant_chunks:
         chat_history.append({"role": "system", "content": chunk})
 
+    # Use the OpenAI API to generate a response based on the chat history and the retrieved context
     response = client.chat.completions.create(
         model="gpt-4",
         messages=chat_history,
@@ -33,6 +38,11 @@ def ask_question_with_retrieval(question):
         max_tokens=1024
     )
 
+    # Extract and store the assistant's response from the API result
     answer = response.choices[0].message.content
+
+    # Save the assistant's response to the chat history for future reference
     chat_history.append({"role": "assistant", "content": answer})
+
+    # Return the generated answer
     return answer

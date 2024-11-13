@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, jsonify, url_for
 from . import retriever, generator
-from .generator import ask_question
+from .generator import ask_question_with_retrieval
 
 main = Blueprint('main', __name__)
 
@@ -17,6 +17,6 @@ def chat():
     if not user_question:
         return jsonify({"error": "No question provided"}), 400
 
-    answer = ask_question(user_question)
+    answer = ask_question_with_retrieval(user_question)
     return jsonify({"response": answer})
 

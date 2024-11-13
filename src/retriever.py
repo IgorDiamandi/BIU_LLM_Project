@@ -11,6 +11,7 @@ embed_model = OpenAIEmbedding(embed_batch_size=42)
 documents = []
 data_directory = "./data/documents"
 
+# Run on all files under the documents folder and add them to a Document object
 for filename in os.listdir(data_directory):
     if filename.endswith(".json"):
         file_path = os.path.join(data_directory, filename)
