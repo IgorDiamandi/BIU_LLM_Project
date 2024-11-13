@@ -4,7 +4,5 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="jdk" jdkName="Poetry (BIU_LLM_Project)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jquery-ui" level="application" />
-    <orderEntry type="library" name="htmx.org" level="application" />
   </component>
 </module>
