@@ -1,0 +1,26 @@
+.gradio-container {
+        background-color: darkseagreen;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .input-textbox {
+        border-radius: 15px;
+    }
+    .chat-message {
+        border-radius: 15px;
+        padding: 10px;
+        margin: 5px;
+    }
+    .chat-message.user {
+        background-color: white;
+        color: black;
+        align-self: flex-end;
+    }
+    .chat-message.bot {
+        background-color: gray;
+        color: black;
+        align-self: flex-start;
+    }
+    .btn-primary {
+        background-color: #003366;
+        color: #ffffff;
+    }

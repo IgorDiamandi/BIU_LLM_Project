@@ -17,6 +17,7 @@ system_message = {
 }
 
 # Function to ask a question, retrieve relevant documents, and generate a response
+# Function to ask a question, retrieve relevant documents, and generate a response
 def ask_question_with_retrieval(question):
     # Retrieve relevant document chunks that provide context for the question
     relevant_chunks = retrieve(question)
@@ -27,9 +28,10 @@ def ask_question_with_retrieval(question):
     # Append the user's question to the chat history
     messages.append({"role": "user", "content": question})
 
-    # Add the retrieved document chunks to the chat history to provide the assistant with more context
-    for chunk in relevant_chunks:
-        messages.append({"role": "system", "content": chunk})
+    # If there are relevant chunks, append them to the chat history as context
+    if relevant_chunks:
+        context = "Here are some relevant details I found:\n" + "\n\n".join(relevant_chunks)
+        messages.append({"role": "system", "content": context})
 
     # Use the OpenAI API to generate a response based on the chat history and the retrieved context
     response = client.chat.completions.create(

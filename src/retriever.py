@@ -10,7 +10,7 @@ settings.embed_model = embed_model
 documents = []
 
 # Load documents from JSON files in the specified directory
-data_directory = './data/documents'
+data_directory = 'data\documents\yehonatan'
 for filename in os.listdir(data_directory):
     if filename.endswith(".json"):
         file_path = os.path.join(data_directory, filename)
