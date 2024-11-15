@@ -1,0 +1,10 @@
+Analyze this document and extract the following information in JSON format. The document contains course syllabus information,
+                likely in both Hebrew and English. Required JSON structure: { "course_name": "Course name in original language",
+                "program_manager": "Look for 'מנהל התוכנית' or program manager",
+                "instructors": [ { "name": "Instructor name", "role": "Role (e.g., יועץ מקצועי, מרצה, מרצה בכיר, מדריך)", "title": "Professional title if available", "description": "Additional description or background" } ],
+                "summary": "A comprehensive summary of the course content", "embedded_images": ["List of image references"],
+                "full_text": "The complete text from the document" } Keep all text in its original language (Hebrew and English). Give the full text.
+                IMPORTANT NOTES:
+                1. If a field is not found, use null or empty array [].
+                2. I gave you the accurate json format. DO NOT add more entries to the json file.
+                3. You need extract the the text from the entire document.
