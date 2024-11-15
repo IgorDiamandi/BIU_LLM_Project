@@ -1,4 +1,4 @@
-from src.gradio_chat import demo
+from src.gradio_chat import chat_ui
 
 from flask import Flask
 import os
@@ -19,6 +19,6 @@ def create_app():
         static_folder=static_folder
     )
 
-    demo.launch()
+    chat_ui.launch()
 
     return app
