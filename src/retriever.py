@@ -2,12 +2,42 @@ from llama_index.core import VectorStoreIndex, Document, Settings
 from llama_index.embeddings.openai import OpenAIEmbedding
 import json
 import os
+import boto3
+
 
 embed_model = OpenAIEmbedding(embed_batch_size=42)
 settings = Settings
 settings.embed_model = embed_model
 
 documents = []
+
+
+#region S3
+# S3 Configuration
+s3_bucket_name = 'your-s3-bucket-name' #S3 Bucket name
+s3_folder_path = 'data/documents/yehonatan/'  # S3 folder path
+local_temp_dir = 'temp_documents/'  # Temporary local directory for processing
+
+#Preparation for the S3 flow
+s3 = boto3.client('s3')
+
+def download_files_from_s3(bucket_name, folder_path, local_directory):
+    objects = s3.list_objects_v2(Bucket=bucket_name, Prefix=folder_path)
+    if 'Contents' not in objects:
+        print("No files found in S3 folder.")
+        return []
+
+    downloaded_files = []
+    for obj in objects['Contents']:
+        file_key = obj['Key']
+        if file_key.endswith('.json'):  # Process only JSON files
+            local_file_path = os.path.join(local_directory, os.path.basename(file_key))
+            s3.download_file(bucket_name, file_key, local_file_path)
+            downloaded_files.append(local_file_path)
+    return downloaded_files
+
+#endregion
+downloaded_files = download_files_from_s3(s3_bucket_name, s3_folder_path, local_temp_dir)
 
 # Load documents from JSON files in the specified directory
 data_directory = 'data\documents\yehonatan'
