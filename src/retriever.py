@@ -1,46 +1,57 @@
-from llama_index.core import VectorStoreIndex, Document, Settings
-from llama_index.embeddings.openai import OpenAIEmbedding
-import json
 import os
-import boto3
+import json
+from pinecone import Pinecone, ServerlessSpec
+from llama_index.embeddings.openai import OpenAIEmbedding
+from llama_index.core import Document
+from config.config_helper import pinecone_api_key, openai_api_key
+import tiktoken
 
 
+# Initialize tokenizer for the embedding model
+tokenizer = tiktoken.encoding_for_model("text-embedding-ada-002")  # Replace with your model name if different
+MAX_TOKENS = 4096  # Define the maximum token limit for the model
+
+pc = Pinecone(api_key=pinecone_api_key)
+client = OpenAIEmbedding(openai_api_key=openai_api_key)
+
+
+def chunk_text(text, max_tokens=MAX_TOKENS):
+    """
+    Splits a long text into smaller chunks, each within the max token limit.
+    """
+    tokens = tokenizer.encode(text)
+    chunks = []
+    for i in range(0, len(tokens), max_tokens):
+        chunk = tokenizer.decode(tokens[i:i+max_tokens])
+        chunks.append(chunk)
+    return chunks
+
+
+# Check if the index exists and recreate it with the correct dimension
+index_name = "biullmindex"
+if index_name in pc.list_indexes().names():
+    print(f"Deleting existing index: {index_name}")
+    pc.delete_index(name=index_name)
+
+print(f"Creating new index: {index_name} with dimension 1536")
+pc.create_index(
+    name=index_name,
+    dimension=1536,  # Update to match the embedding vector size
+    metric="cosine",  # Use cosine similarity (or 'dotproduct' / 'euclidean' based on your use case)
+    spec=ServerlessSpec(
+        cloud="aws",  # Replace with the cloud provider from your environment
+        region="us-east-1"  # Replace with the region from your environment
+    )
+)
+
+# Connect to the new index
+pinecone_index = pc.Index(index_name)
+# Initialize embedding model
 embed_model = OpenAIEmbedding(embed_batch_size=42)
-settings = Settings
-settings.embed_model = embed_model
-
-documents = []
-
-
-#region S3
-# S3 Configuration
-s3_bucket_name = 'your-s3-bucket-name' #S3 Bucket name
-s3_folder_path = 'data/documents/yehonatan/'  # S3 folder path
-local_temp_dir = 'temp_documents/'  # Temporary local directory for processing
-
-#Preparation for the S3 flow
-s3 = boto3.client('s3')
-
-def download_files_from_s3(bucket_name, folder_path, local_directory):
-    objects = s3.list_objects_v2(Bucket=bucket_name, Prefix=folder_path)
-    if 'Contents' not in objects:
-        print("No files found in S3 folder.")
-        return []
-
-    downloaded_files = []
-    for obj in objects['Contents']:
-        file_key = obj['Key']
-        if file_key.endswith('.json'):  # Process only JSON files
-            local_file_path = os.path.join(local_directory, os.path.basename(file_key))
-            s3.download_file(bucket_name, file_key, local_file_path)
-            downloaded_files.append(local_file_path)
-    return downloaded_files
-
-#endregion
-downloaded_files = download_files_from_s3(s3_bucket_name, s3_folder_path, local_temp_dir)
 
 # Load documents from JSON files in the specified directory
-data_directory = 'data\documents\yehonatan'
+documents = []
+data_directory = 'data\\documents\\yehonatan\\1linejsons'
 for filename in os.listdir(data_directory):
     if filename.endswith(".json"):
         file_path = os.path.join(data_directory, filename)
@@ -50,7 +61,8 @@ for filename in os.listdir(data_directory):
 
                 # Extract full_text and separate metadata
                 text_content = data.get('full_text', '')  # Extract the actual content for embedding
-                metadata = {key: value for key, value in data.items() if key != 'full_text'}  # Keep the rest as metadata
+                metadata = {key: value for key, value in data.items() if
+                            key != 'full_text'}  # Keep the rest as metadata
 
                 # Create a Document with separated text and metadata
                 if text_content:  # Ensure there's some text content to add
@@ -61,26 +73,101 @@ for filename in os.listdir(data_directory):
         except json.JSONDecodeError as e:
             print(f"Error decoding JSON from file {filename}: {e}")
 
-# Function to create an index with an increased chunk size to accommodate larger metadata
-def create_index(documents):
+
+def generate_embedding(text):
+    print("Generating embedding")
+    # Check if the text exceeds the token limit
+    if len(tokenizer.encode(text)) > MAX_TOKENS:
+        print("Text exceeds token limit. Splitting into chunks.")
+        chunks = chunk_text(text)
+        # Generate embeddings for each chunk
+        embeddings = [client.get_text_embedding(chunk) for chunk in chunks]
+        # Optionally combine embeddings (e.g., average)
+        combined_embedding = [sum(x) / len(x) for x in zip(*embeddings)]
+        return combined_embedding
+    else:
+        return client.get_text_embedding(text)
+
+
+def clean_metadata(metadata):
+    print("Cleaning metadata")
+    """
+    Cleans metadata to ensure it contains only valid Pinecone types:
+    string, number, boolean, or list of strings.
+    """
+    cleaned_metadata = {}
+    for key, value in metadata.items():
+        if isinstance(value, (str, int, float, bool)):
+            cleaned_metadata[key] = value  # Keep valid types as-is
+        elif isinstance(value, list):
+            # Check if all elements in the list are strings
+            if all(isinstance(item, str) for item in value):
+                cleaned_metadata[key] = value
+            else:
+                print(f"Warning: Excluding invalid list metadata for key '{key}': {value}")
+        else:
+            print(f"Warning: Excluding invalid metadata for key '{key}': {value}")
+    return cleaned_metadata
+
+
+def add_documents_to_pinecone(documents):
+    print("Adding documents to Pinecone")
     if not documents:
-        print("Error: No documents to create embeddings. Please add documents to the 'data/documents/' directory.")
-        return None
+        print("Error: No documents to index.")
+        return
 
-    # Increase the chunk size to handle large metadata
-    # We will use a very large chunk size to ensure all metadata fits
-    index = VectorStoreIndex.from_documents(documents, settings=settings, chunk_size=8192)
-    return index
+    for i, doc in enumerate(documents):
+        # Clean metadata
+        metadata = clean_metadata(doc.metadata)
 
-index = create_index(documents)
+        # Check if the text exceeds the token limit
+        if len(tokenizer.encode(doc.text)) > MAX_TOKENS:
+            print(f"Document {i} exceeds token limit. Splitting into chunks.")
+            chunks = chunk_text(doc.text)
+            for j, chunk in enumerate(chunks):
+                chunk_id = f"doc-{i}-chunk-{j}"
+                embedding = client.get_text_embedding(chunk)
+                pinecone_index.upsert(
+                    vectors=[(chunk_id, embedding, {**metadata, "chunk_id": chunk_id})]
+                )
+        else:
+            # Process smaller documents as usual
+            embedding = client.get_text_embedding(doc.text)
+            pinecone_index.upsert(
+                vectors=[(f"doc-{i}", embedding, metadata)]
+            )
 
-# Retrieval function using the created index
+    print(f"Indexed {len(documents)} documents (with chunks) in Pinecone.")
+
+
+# Index the documents in Pinecone
+add_documents_to_pinecone(documents)
+
+
 def retrieve(query, k=3):
-    if index is None:
-        return ["No documents available to retrieve information from."]
+    # Generate embedding for the query
+    query_embedding = client.get_text_embedding(query)
 
-    query_engine = index.as_query_engine()
-    response = query_engine.query(query)
+    # Query Pinecone with keyword arguments
+    results = pinecone_index.query(
+        vector=query_embedding,
+        top_k=k,
+        include_metadata=True
+    )
 
-    # Convert response to a list of strings to return
-    return [str(response)]
+    # Format results as a list of strings
+    responses = []
+    for match in results['matches']:
+        metadata = match['metadata']
+        score = match['score']
+        response_text = f"Score: {score}\nMetadata: {metadata}"
+        responses.append(response_text)
+
+    return responses
+
+
+# Example usage
+query = "Find information about XYZ"
+results = retrieve(query, k=3)
+for res in results:
+    print(res)
