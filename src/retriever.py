@@ -5,6 +5,7 @@ from llama_index.embeddings.openai import OpenAIEmbedding
 from llama_index.core import Document
 from config.config_helper import pinecone_api_key, openai_api_key
 import tiktoken
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 
 # Initialize tokenizer for the embedding model
@@ -15,16 +16,19 @@ pc = Pinecone(api_key=pinecone_api_key)
 client = OpenAIEmbedding(openai_api_key=openai_api_key)
 
 
-def chunk_text(text, max_tokens=MAX_TOKENS):
+def chunk_text(text, max_tokens=MAX_TOKENS, overlap=200):
     """
-    Splits a long text into smaller chunks, each within the max token limit.
+    Splits text into chunks, ensuring they respect the token limit while maintaining sentence and paragraph structure for better context preservation.
     """
-    tokens = tokenizer.encode(text)
-    chunks = []
-    for i in range(0, len(tokens), max_tokens):
-        chunk = tokenizer.decode(tokens[i:i+max_tokens])
-        chunks.append(chunk)
+    # Use LangChain's RecursiveCharacterTextSplitter for smart chunking
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=max_tokens,  # Maximum size of each chunk
+        chunk_overlap=overlap,  # Number of overlapping tokens
+        separators=["\n\n", "\n", ".", " "]  # Priority separators for splitting
+    )
+    chunks = text_splitter.split_text(text)
     return chunks
+
 
 
 # Check if the index exists and recreate it with the correct dimension
