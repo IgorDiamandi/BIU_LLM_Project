@@ -34,7 +34,7 @@ chat_ui = gr.ChatInterface(
     fn=chat_interface,
     title="College Information Desk Chat",
     theme="soft",
-    examples=["What courses do you offer?", "What are the admission requirements?"],
+    examples=["What courses do you offer?", "Are there courses to learn Data Science"],
     type="messages",
     css_paths="web/static/gradio_styles.css"
 )

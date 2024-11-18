@@ -1,7 +1,9 @@
 from openai import OpenAI
 from src.retriever import retrieve
+from config.config_helper import openai_api_key
 
-client = OpenAI()
+
+client = OpenAI(api_key=openai_api_key)
 
 # Initialize the assistant's persona and behavior
 system_message = {
@@ -15,6 +17,7 @@ system_message = {
                "If you do not have an answer, apologize sincerely "
                "and let the user know that you can't provide that information."
 }
+
 
 # Function to ask a question, retrieve relevant documents, and generate a response
 # Function to ask a question, retrieve relevant documents, and generate a response

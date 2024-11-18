@@ -3,7 +3,8 @@
   <component name="PoetryConfigService">
     <option name="poetryVirtualenvPaths">
       <set>
-        <option value="$USER_HOME$/AppData/Local/pypoetry/Cache/virtualenvs/biu-llm-project-6mTmUzEk-py3.11/Scripts/python.exe" />
+        <option value="$PROJECT_DIR$/../AppData/Local/pypoetry/Cache/virtualenvs/biu-llm-project-6mTmUzEk-py3.11/Scripts/python.exe" />
+        <option value="$PROJECT_DIR$/../.cache/pypoetry/virtualenvs/biu-llm-project-fc5OptN6-py3.11/bin/python" />
       </set>
     </option>
   </component>
