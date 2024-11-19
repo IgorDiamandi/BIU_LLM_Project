@@ -32,7 +32,7 @@ def chat_interface(user_input, history=None):
 # Define the Gradio ChatInterface
 chat_ui = gr.ChatInterface(
     fn=chat_interface,
-    title="College Information Desk Chat",
+    title="BIU School for Cyber and High Tech Information Desk Chat",
     theme="soft",
     examples=["What courses do you offer?", "Are there courses to learn Data Science"],
     type="messages",
