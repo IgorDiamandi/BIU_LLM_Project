@@ -18,37 +18,39 @@ system_message = {
                "and let the user know that you can't provide that information."
 }
 
+# Initialize the chat history as a global list
+chat_history = [system_message]
+
 
 # Function to ask a question, retrieve relevant documents, and generate a response
-# Function to ask a question, retrieve relevant documents, and generate a response
 def ask_question_with_retrieval(question):
+    global chat_history
+
     # Retrieve relevant document chunks that provide context for the question
     relevant_chunks = retrieve(question)
 
-    # Build the complete chat history including system message
-    messages = [system_message]
-
     # Append the user's question to the chat history
-    messages.append({"role": "user", "content": question})
+    chat_history.append({"role": "user", "content": question})
 
     # If there are relevant chunks, append them to the chat history as context
     if relevant_chunks:
         context = "Here are some relevant details I found:\n" + "\n\n".join(relevant_chunks)
-        messages.append({"role": "system", "content": context})
+        chat_history.append({"role": "system", "content": context})
 
-    # Use the OpenAI API to generate a response based on the chat history and the retrieved context
+    # Use the OpenAI API to generate a response based on the chat history
     response = client.chat.completions.create(
         model="gpt-4",
-        messages=messages,
+        messages=chat_history,
         temperature=1,
         max_tokens=1024
     )
 
-    # Extract and format the assistant's response as a dictionary
+    # Extract the assistant's response and append it to the chat history
     answer = {
         "role": "assistant",
         "content": response.choices[0].message.content
     }
+    chat_history.append(answer)
 
-    # Return the generated answer
+    # Return the generated answer content
     return answer
