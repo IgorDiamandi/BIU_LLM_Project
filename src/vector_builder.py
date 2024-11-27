@@ -17,7 +17,7 @@ client = OpenAIEmbedding(openai_api_key=openai_api_key)
 
 
 # Function to split text into chunks
-def chunk_text(text, max_tokens=MAX_TOKENS, overlap=200):
+def chunk_text(text, max_tokens=MAX_TOKENS, overlap=100):
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=max_tokens,
         chunk_overlap=overlap,
@@ -81,11 +81,20 @@ def populate_vector_db(data_path, index_name="biullmindex"):
             with open(file_path, 'r', encoding='utf-8') as file:
                 data = json.load(file)
                 text_content = data.get('full_text', '')
-                metadata = {key: value for key, value in data.items() if key != 'full_text'}
+                
+                metadata_keys = ['course_name', 'summary']
+                metadata = {key: value for key, value in data.items() if key in metadata_keys}
+           
                 if text_content:
                     documents.append(Document(text=text_content, metadata=metadata))
+                    
     add_documents_to_pinecone(documents, pinecone_index)
 
 
-path = '..\\data\\documents\\eng'
-populate_vector_db(path, index_name="biullmindex")
+cwd =os.getcwd()
+# print("Current working directory:", cwd)
+
+json_path = os.path.join(cwd, 'data','documents','eng')
+print("Jsons docs path:", json_path)
+
+populate_vector_db(json_path, index_name="biullmindex")
