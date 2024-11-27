@@ -21,7 +21,9 @@ def chunk_text(text, max_tokens=MAX_TOKENS, overlap=200):
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=max_tokens,
         chunk_overlap=overlap,
-        separators=["\n\n", "\n", ".", " "]
+        
+        # separators=["\n\n", "\n", ".", " "]
+        separators=["\n\n", "\n"]
     )
     return text_splitter.split_text(text)
 
@@ -85,5 +87,5 @@ def populate_vector_db(data_path, index_name="biullmindex"):
     add_documents_to_pinecone(documents, pinecone_index)
 
 
-path = '..\\data\\documents\\yehonatan\\1linejsons'
+path = '..\\data\\documents\\eng'
 populate_vector_db(path, index_name="biullmindex")
