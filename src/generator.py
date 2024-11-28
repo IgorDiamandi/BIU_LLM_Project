@@ -43,7 +43,7 @@ system_message = {
 chat_history = [system_message]
 
 # Maximum allowed tokens for the history
-MAX_HISTORY_TOKENS = 3000  # Adjust as needed
+MAX_HISTORY_TOKENS = 50000  # Adjust as needed
 
 # Function to calculate token count
 def count_tokens(messages, model="gpt-4o-2024-11-20"):
