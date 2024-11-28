@@ -1,0 +1,86 @@
+{
+  "course_name": "CDO – CDAiO",
+  "instructors": [
+    {
+      "name": "Eran Shaham",
+      "role": "Academic Director",
+      "title": null,
+      "description": "Director of the School of Hi-Tech and Cyber Security at Bar-Ilan University."
+    },
+    {
+      "name": "Esther Agayev",
+      "role": "Course Coordinator",
+      "title": null,
+      "description": "Responsible for course coordination and student support."
+    },
+    {
+      "name": "Ido Biger",
+      "role": "CDAiO Track Leader",
+      "title": "EVP, CIO – Delek US and CEO at DK",
+      "description": "Formerly: ELAL Israel Airlines - CDO, Yes – Head Of Data."
+    },
+    {
+      "name": "Lior Israeli",
+      "role": "CDAiO Track Leader",
+      "title": "CDAiO, Head of Data, AI & Analytics – Circles Ai",
+      "description": "Formerly: Deloitte - Manager, Data & AI Strategy. Founder of Data Activity & AI Cloud Services."
+    },
+    {
+      "name": "Oren Mizrahi",
+      "role": "Instructor",
+      "title": "VP, Chief Data & Analytics Officer (CDAO) - Menora Mivtachim",
+      "description": "Teaches AI/ML, Data Science & CDO Operational Management. Formerly: City Bank."
+    },
+    {
+      "name": "Einat Shimoni",
+      "role": "Instructor",
+      "title": "EVP Researcher of technology trends - STKI",
+      "description": "Teaches CDO, Data & AI Literacy. Expert in data, AI, digital, and related fields."
+    },
+    {
+      "name": "Itay Hazan",
+      "role": "Instructor",
+      "title": "CFO - PayBox",
+      "description": "Teaches Data Monetization. Formerly: Oracle – Strategic Director, Financial Market, Cal – Chief Data & Digital Officer."
+    },
+    {
+      "name": "Alon Schwartz",
+      "role": "Instructor",
+      "title": "Head of Data, Analytics and AI - Proceed",
+      "description": "Teaches Digital Transformation and Data. Formerly: CPO Leema.ai, CIO Irani Corp., Clalit - Head of Data & Digital."
+    },
+    {
+      "name": "Oren Harel",
+      "role": "Instructor",
+      "title": "Data Management and Governance Consultancy - Aman",
+      "description": "Teaches Data Governance Technologies. Formerly: Deloitte – Manager, Data Governance."
+    },
+    {
+      "name": "Tani Shapira",
+      "role": "Instructor",
+      "title": "Adv. Data Protection Officer, HIPAA auditor – MyEDPO",
+      "description": "Expert in privacy protection and compliance. Formerly: Yigal Arnon & Co."
+    },
+    {
+      "name": "Hillel Koberovsky",
+      "role": "Instructor",
+      "title": "Cyber Security Expert & Trusted Advisor - Fortinet",
+      "description": "Teaches Information Security and Career Management."
+    },
+    {
+      "name": "Dor Eliav",
+      "role": "Instructor",
+      "title": null,
+      "description": "Teaches Effective Presentations, Public Speaking, and Leadership Empowerment."
+    },
+    {
+      "name": "Oren Yeager",
+      "role": "Instructor",
+      "title": "CSO Managing Director - Clarity-Sec",
+      "description": "Teaches Cloud Transformation and Architecture. Expert in Information Security. Roles include CISO, CSO, AWS Community Builder, and more."
+    }
+  ],
+  "summary": "The CDO – CDAiO course is a professional program designed to train participants in the roles and responsibilities of Chief Data and AI Officers. The course is hosted by the School of Hi-Tech and Cyber Security at Bar-Ilan University and aims to bridge academia and industry. It includes 27 professional sessions and 2 enrichment sessions, focusing on topics such as data strategy, data governance, AI, machine learning, data monetization, and digital transformation. The program emphasizes hybrid learning, career workshops, and the development of personal portfolios. Participants are required to complete a final project covering key course topics, with an estimated workload of 30 hours. The course collaborates with the MIT Chief Data Officer and Information Quality Symposium, providing international exposure and certification opportunities. The program is supported by a team of industry-leading instructors with extensive experience in data, AI, and related fields.",
+  "full_text": "COURSE NAME: CDO – CDAiO (Chief Data Officer – Chief Data Analytics & AI Officer), Cohort 14.\n\nCOURSE OVERVIEW: The CDO – CDAiO program is designed to bridge the gap between academia and industry, providing participants with the knowledge and skills to excel in the fields of data analytics, artificial intelligence, and organizational data management. The program is hosted by the School of Hi-Tech and Cyber Security at Bar-Ilan University and offers a unique learning environment with hybrid learning options, advanced multimedia equipment, and partnerships with leading companies. The program aims to prepare students for international certifications and successful careers in the tech industry.\n\nTARGET AUDIENCE: Not explicitly mentioned.\n\nCOURSE LEADERSHIP: \n- Eran Shaham: Director of the School of Hi-Tech and Cyber Security. Contact: eran.shaham@biu.ac.il, 050-6560666.\n- Esther Agayev: Course Coordinator. Contact: esther.asulin@biu.ac.il, 052-5886002.\n- Ido Biger: CDAiO Track Leader, EVP, CIO – Delek US, CEO at DK, formerly CDO at ELAL Israel Airlines and Head of Data at Yes.\n- Lior Israeli: CDAiO Track Leader, Head of Data, AI & Analytics – Circles AI, formerly Manager of Data & AI Strategy at Deloitte. Contact: lior.israeli@gmail.com, 052-2553468.\n- Oren Mizrahi: Lecturer in AI/ML, Data Science & CDO Operational Management, VP and Chief Data & Analytics Officer at Menora Mivtachim, formerly at City Bank.\n- Einat Shimoni: Lecturer in CDO, Data & AI Literacy, EVP Researcher of Technology Trends at STKI.\n- Itay Hazan: Lecturer in Data Monetization, CFO at PayBox, formerly Strategic Director at Oracle and Chief Data & Digital Officer at Cal.\n- Alon Schwartz: Lecturer in Digital Transformation and Data, Head of Data, Analytics, and AI at Proceed, formerly CIO at Irani Corp and Head of Data & Digital at Clalit.\n- Oren Harel: Lecturer in Data Governance Technologies, Consultant at Aman, formerly Data Governance Manager at Deloitte.\n- Tani Shapira: Lecturer, Privacy Protection Expert, Data Protection Officer, and HIPAA Auditor at MyEDPO, formerly at Yigal Arnon & Co.\n- Hillel Koberovsky: Lecturer in Cyber Security and Career Management, Cyber Security Expert at Fortinet.\n- Dor Eliav: Lecturer in Effective Presentations and Public Speaking, Leadership and Personal Empowerment Expert.\n- Oren Yeager: Lecturer in Cloud Transformation and Architecture, CISO and Cloud Security Expert, Managing Director at Clarity-Sec.\n\nPREREQUISITES: Not explicitly mentioned.\n\nCERTIFICATIONS: International certifications from leading organizations such as EC-Council, VMware, Fortinet, ISACA, AWS.\n\nCOURSE SCHEDULE: \n- Start Date: November 4, 2024.\n- End Date: February 4, 2025.\n- Duration: 27 professional sessions + 2 enrichment sessions.\n- Schedule: Mondays and Thursdays, 17:30–21:30 (with two 15-minute breaks).\n- Enrichment sessions may occur on other days as announced.\n- Attendance: Minimum 80% required, with mandatory physical attendance for certain sessions.\n\nLEARNING FORMAT: \n- Physical Learning Environment: Classrooms in Buildings 403 and 505, protected spaces in Building 404, coffee corner in Building 403 (near Room 68), cafeteria across the path between Buildings 403 and 404, vending machines in Buildings 404 and 504, parking available for 20 NIS per evening or 300 NIS for the course duration.\n- Digital Learning Environment: WhatsApp group, Zoom link, Google Drive with lecture recordings and materials, course contact list, WiFi settings, alumni group post-course.\n\nTUITION AND FEES: \n- Parking: 20 NIS per evening or 300 NIS for the course duration.\n\nCOURSE TOPICS: \n1. Data & Insights Driven Organization.\n2. The CDAiO Roles, Responsibilities, and Agenda Overview.\n3. Data Strategy Building Process, Management, and Measurement.\n4. Data Platform & Architecture.\n5. Cloud Journey and Security, including Data Strategy in the Cloud.\n6. Data Privacy & Regulations.\n7. Organizational Data Governance.\n8. The Data Analyst.\n9. Data Visualization & Storytelling.\n10. Data Science Life Cycle and Machine Learning.\n11. Data Science Operation Management.\n12. Generative AI Projects.\n13. Data Monetization.\n14. Executive Look at Modern Project Management with AI as Co-Pilot.\n15. Data & AI Literacy.\n16. Career Management and LinkedIn Appearance.\n17. Building a Winning Presentation and Persuasive Speeches.\n18. Advanced Project Management for Data Products.\n\nREGISTRATION AND CONTACT INFORMATION: \n- Contact Esther Agayev for registration and parking arrangements: esther.asulin@biu.ac.il, 052-5886002.\n\nINSTITUTIONAL INFORMATION: The School of Hi-Tech and Cyber Security at Bar-Ilan University is managed by Eran Shaham. It offers innovative learning solutions, hybrid learning environments, and partnerships with leading companies. The school aims to support tech industry professionals throughout their careers and provides opportunities to earn academic credits through unique programs.\n\nADDITIONAL INFORMATION: \n- CDAiO Final Project: Submission deadline is February 4, 2025. Students must prepare a presentation (5-6 slides, 10-15 minutes) on selected topics. Estimated preparation time is 30 hours.\n- Collaboration with MIT Chief Data Officer and Information Quality Symposium.\n- Course materials and recordings will be available for three months post-course.\n\nThank you for choosing the CDAiO program at Bar-Ilan University!",
+  "full_text_no_tokens": 1283
+}

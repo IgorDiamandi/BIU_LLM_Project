@@ -22,6 +22,14 @@ def chat_interface(user_input, history=None):
     # Append the user's input to the history
     formatted_history.append({"role": "user", "content": user_input})
 
+    # Check total length of all content strings in the history
+    total_length = sum(len(message["content"]) for message in formatted_history)
+    while total_length > 10000:
+        # Remove the oldest message
+        formatted_history.pop(0)
+        # Recalculate total length
+        total_length = sum(len(message["content"]) for message in formatted_history)
+
     # Get the assistant's response using the generator function
     assistant_response = ask_question_with_retrieval(user_input)
 
