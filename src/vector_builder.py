@@ -76,6 +76,7 @@ def populate_vector_db(data_path, index_name="biullmindex"):
     pinecone_index = initialize_index(index_name)
     documents = []
     for filename in os.listdir(data_path):
+        print(f'Populating {filename}')
         if filename.endswith(".json"):
             file_path = os.path.join(data_path, filename)
             with open(file_path, 'r', encoding='utf-8') as file:
@@ -91,11 +92,7 @@ def populate_vector_db(data_path, index_name="biullmindex"):
     add_documents_to_pinecone(documents, pinecone_index)
 
 
-# cwd =os.getcwd()
-cwd =  'C:\\github_repos\\BIU_LLM_Project\\'
-# print("Current working directory:", cwd)
-
-json_path = os.path.join(cwd, 'data','documents','eng')
+json_path = os.path.abspath(os.path.join('..', 'data', 'documents', 'eng'))
 print("JSONs docs path:", json_path)
 
 populate_vector_db(json_path, index_name="biullmindex")
