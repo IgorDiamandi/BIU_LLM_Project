@@ -48,6 +48,7 @@ optimum = {extras = ["exporters"], version = "^1.23.3"}
 llama-index-embeddings-huggingface-optimum = "^0.2.0"
 chardet = "^5.2.0"
 python-bidi = "^0.6.3"
+pinecone-client = "^5.0.1"
 
 
 [build-system]
