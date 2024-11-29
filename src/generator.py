@@ -24,7 +24,7 @@ system_message = {
 chat_history = [system_message]
 
 # Maximum allowed tokens for the history
-MAX_HISTORY_TOKENS = 3000  # Adjust as needed
+MAX_HISTORY_TOKENS = 3000
 
 
 # Function to calculate token count
