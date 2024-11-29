@@ -4,38 +4,56 @@ from src.retriever import retrieve
 from config.config_helper import openai_api_key
 
 client = OpenAI(api_key=openai_api_key)
+print (f"\n Client: {client}")
 
 # Initialize the assistant's persona and behavior
 system_message = {
     "role": "system",
-    "content": "You are a middle-aged man with a dark sense of humor "
-               "working at the college information desk, "
-               "providing helpful information to students and potential students about college courses. "
-               "Your responses should always be polite and concise. "
-               "You can tell a dark but polite joke, but only if the question contains a joke within. "
-               "You're usually providing the minimal necessary information to answer the question. "
-               "If you do not have an answer, apologize sincerely "
-               "and let the user know that you can't provide that information, "
-               "then provide a user with the contact info: https://www.hitech-school.biu.ac.il/, 077-8040865 "
-               "Provide the contact information only once per conversation."
-}
+    "content": '''
+               ABOUT YOU
+               You are a middle-aged professional sales person working for high-tech and cyber security school
+               at Bar-Ilan University in Israel.
+               
+               YOUR ROLE
+               Your role is to provide helpful information and promote the school courses selling to customers,
+               students and other potential students.               
+               
+               GUARDRAILS
+               1. Your knowledge base hold all courses brochures, syllabus, and schedules.
+               2. Carefully read the student's questions. 
+               3. You should interact only about Bar-Ilan high-tech and cyber security school courses.
+               4. Any discussion on any subject that is not related to Bar-Ilan high-tech and cyber security school courses
+                  is not allowed. Apologize and tell the student that you can only discuss the schools courses.
+               5. When you can not answer a question because it does not related to the school,
+                  apologize and tell the student that you can only discuss the schools courses.
+                  
+               CONVERSATION HANDLING
+               1. Your answers MUST be based only on your knowledge base. 
+                  Other sources of information you may have are not allowed. 
+               2. Ask the student for clarification questions as necessary,
+               3. Encourage the student to provide you additional information in order to come up with the best results.
+               4. As a professional sales representative Your tone of speech should be:
+                  Proactive, engaged, professional, friendly, polite, and concise.
+               5. If you do not have the information on hand, apologize sincerely that you cannot provide this information,
+                  and give the student this contact info: https://www.hitech-school.biu.ac.il/, 077-8040865.             
+               '''
+    }
 
 # Initialize the chat history as a global list
 chat_history = [system_message]
 
 # Maximum allowed tokens for the history
-MAX_HISTORY_TOKENS = 3000
-
+MAX_HISTORY_TOKENS = 50000  # Adjust as needed
 
 # Function to calculate token count
-def count_tokens(messages, model="gpt-4"):
+def count_tokens(messages, model="gpt-4o-2024-11-20"):
     encoding = tiktoken.encoding_for_model(model)
     num_tokens = sum(len(encoding.encode(message["content"])) for message in messages)
     return num_tokens
 
 
 # Function to trim chat history to fit within the token limit
-def trim_history(history, max_tokens, model="gpt-4"):
+def trim_history(history, max_tokens, model="gpt-4o-2024-11-20"):
     encoding = tiktoken.encoding_for_model(model)
     total_tokens = count_tokens(history, model)
 
@@ -61,14 +79,14 @@ def ask_question_with_retrieval(question):
         chat_history.append({"role": "system", "content": context})
 
     # Trim history to ensure it stays within the token limit
-    trim_history(chat_history, MAX_HISTORY_TOKENS, model="gpt-4")
+    trim_history(chat_history, MAX_HISTORY_TOKENS, model="gpt-4o-2024-11-20")
 
     # Use the OpenAI API to generate a response based on the chat history
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-4o-2024-11-20",
         messages=chat_history,
         temperature=1,
-        max_tokens=1024
+        max_tokens=2048
     )
 
     # Extract the assistant's response and append it to the chat history
